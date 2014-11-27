@@ -1,0 +1,22 @@
+{
+  "name": "jstransformer-stylus",
+  "version": "0.0.0",
+  "description": "Transform stylus into css",
+  "keywords": [
+    "jstransformer"
+  ],
+  "dependencies": {
+    "clone": "^0.2.0",
+    "stylus": "^0.49.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jstransformers/jstransformer-stylus.git"
+  },
+  "author": "ForbesLindesay",
+  "license": "MIT"
+}
