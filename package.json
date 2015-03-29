@@ -1,13 +1,13 @@
 {
   "name": "jstransformer-stylus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Transform stylus into css",
   "keywords": [
     "jstransformer"
   ],
   "dependencies": {
-    "clone": "^0.2.0",
-    "stylus": "^0.49.3"
+    "clone": "^1.0.2",
+    "stylus": "^0.50.0"
   },
   "devDependencies": {},
   "scripts": {
