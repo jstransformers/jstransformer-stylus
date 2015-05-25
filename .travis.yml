@@ -10,4 +10,3 @@ after_success:
   - npm run coverage
   - npm i coveralls
   - cat ./coverage/lcov.info | coveralls
->>>>>>> d4d981aa6b1ff674c781542b3ec8af2f481fe97f
