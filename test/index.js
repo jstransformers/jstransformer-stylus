@@ -2,14 +2,21 @@
 
 var assert = require('assert');
 var fs = require('fs');
+var join = require('path').join;
+var test = require('testit');
 
 var transform = require('../');
 
-var input = fs.readFileSync(__dirname + '/input.styl', 'utf8');
-var expected = fs.readFileSync(__dirname + '/expected.css', 'utf8');
+var input = fs.readFileSync(join(__dirname, 'input.txt')).toString();
+var expected = fs.readFileSync(join(__dirname, 'expected.txt')).toString();
 
-var output = transform.render(input);
-fs.writeFileSync(__dirname + '/output.css', output);
-assert(output === expected, 'output.css should equal expected.css');
+function assertEqual(output, expected) {
+  console.log('   Output:\t'   + JSON.stringify(output));
+  console.log('   Expected:\t' + JSON.stringify(expected));
+  assert.equal(output, expected);
+}
 
-console.log('test passed');
+test(transform.name, function () {
+  var output = transform.render(input);
+  assertEqual(output, expected);
+});

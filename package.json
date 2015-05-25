@@ -1,17 +1,25 @@
 {
   "name": "jstransformer-stylus",
-  "version": "0.0.2",
-  "description": "Transform stylus into css",
+  "version": "0.0.3",
+  "description": "Stylus support for JSTransformers.",
   "keywords": [
-    "jstransformer"
+    "jstransformer",
+    "stylus"
+  ],
+  "files": [
+    "index.js"
   ],
   "dependencies": {
     "clone": "^1.0.2",
-    "stylus": "^0.50.0"
+    "stylus": "^0.51.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "istanbul": "^0.3.5",
+    "testit": "^2.0.2"
+  },
   "scripts": {
-    "test": "node test"
+    "test": "node test",
+    "coverage": "istanbul cover test"
   },
   "repository": {
     "type": "git",
