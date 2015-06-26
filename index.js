@@ -8,7 +8,7 @@ var clone = require('clone');
 exports.name = 'stylus';
 exports.outputFormat = 'css';
 
-exports.render = function (str, options) {
+exports.render = function (str, options, locals) {
   var renderer = stylus(str);
 
   // Special handling for stylus js api functions
@@ -37,6 +37,11 @@ exports.render = function (str, options) {
     renderer.set(k, normal[k]);
   }
 
+  // Register locals as defines.
+  for (var key in locals || {}) {
+    renderer.define(key, locals[key]);
+  }
+
   var result;
   renderer.render(function (err, res) {
     if (err) throw err;
@@ -48,9 +53,9 @@ exports.render = function (str, options) {
   }
   return result;
 };
-exports.renderFile = function (filename, options) {
+exports.renderFile = function (filename, options, locals) {
   options = options || {};
   options.filename = path.resolve(filename);
   var str = fs.readFileSync(filename, 'utf8');
-  return exports.render(str, options);
+  return exports.render(str, options, locals);
 };
