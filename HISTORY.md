@@ -1,8 +1,9 @@
 # Changelog
 
-## v0.0.x
+## v0.0.5: 2015-06-26
 
 - Added inputFormats
+- Added async support
 
 ## v0.0.4: 2015-06-25
 

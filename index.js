@@ -9,7 +9,10 @@ exports.name = 'stylus';
 exports.inputFormats = ['styl', 'stylus'];
 exports.outputFormat = 'css';
 
-exports.render = function (str, options, locals) {
+/**
+ * Retrieves a Stylus renderer from the given options.
+ */
+function getRenderer(str, options, locals) {
   var renderer = stylus(str);
 
   // Special handling for stylus js api functions
@@ -42,9 +45,12 @@ exports.render = function (str, options, locals) {
   for (var key in locals || {}) {
     renderer.define(key, locals[key]);
   }
+  return renderer;
+}
 
+exports.render = function (str, options, locals) {
   var result;
-  renderer.render(function (err, res) {
+  getRenderer(str, options, locals).render(function (err, res) {
     if (err) throw err;
     // todo: how do we know what the dependencies are?
     result = res;
@@ -54,9 +60,30 @@ exports.render = function (str, options, locals) {
   }
   return result;
 };
+
 exports.renderFile = function (filename, options, locals) {
   options = options || {};
   options.filename = path.resolve(filename);
   var str = fs.readFileSync(filename, 'utf8');
   return exports.render(str, options, locals);
+};
+
+exports.renderAsync = function (str, options, locals) {
+  return new Promise(function (fulfill, reject) {
+    getRenderer(str, options, locals).render(function (err, res) {
+      if (err) {
+        reject(err);
+      }
+      else {
+        fulfill(res)
+      }
+    });
+  });
+};
+
+exports.renderFileAsync = function (filename, options, locals) {
+  options = options || {};
+  options.filename = path.resolve(filename);
+  var str = fs.readFileSync(filename, 'utf8');
+  return exports.renderAsync(str, options, locals);
 };
