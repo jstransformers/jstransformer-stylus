@@ -6,6 +6,7 @@ var stylus = require('stylus');
 var clone = require('clone');
 
 exports.name = 'stylus';
+exports.inputFormats = ['styl', 'stylus'];
 exports.outputFormat = 'css';
 
 exports.render = function (str, options, locals) {

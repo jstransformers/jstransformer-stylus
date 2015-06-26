@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.0.x
+
+- Added inputFormats
+
 ## v0.0.4: 2015-06-25
 
 - Updated Boilerplate
