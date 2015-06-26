@@ -1,6 +1,6 @@
 {
   "name": "jstransformer-stylus",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Stylus support for JSTransformers.",
   "keywords": [
     "jstransformer",
