@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.0.6: 2015-06-27
+
+- Fixed node 0.10 support
+
 ## v0.0.5: 2015-06-26
 
 - Added inputFormats
