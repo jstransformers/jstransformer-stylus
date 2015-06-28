@@ -4,6 +4,7 @@ var path = require('path');
 var fs = require('fs');
 var stylus = require('stylus');
 var clone = require('clone');
+var Promise = require('promise');
 
 exports.name = 'stylus';
 exports.inputFormats = ['styl', 'stylus'];
