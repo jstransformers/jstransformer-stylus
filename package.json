@@ -12,7 +12,7 @@
   "dependencies": {
     "clone": "^1.0.2",
     "promise": "^7.0.3",
-    "stylus": "^0.51.1"
+    "stylus": "^0.52.0"
   },
   "devDependencies": {
     "test-jstransformer": "^1.0.0"
