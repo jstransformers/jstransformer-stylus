@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.0: 2015-08-04
+
+- No changes
+- Stable release
+
 ## v0.0.7: 2015-07-21
 - bump stylus@0.52
 - fixes #3
