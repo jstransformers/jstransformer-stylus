@@ -20,12 +20,18 @@ function getRenderer(str, options, locals) {
   // given { define: { foo: 'bar', baz: 'quux' } }
   // runs renderer.define('foo', 'bar').define('baz', 'quux')
 
-  var allowed = ['set', 'include', 'import', 'define', 'use'];
+  var allowed = ['set', 'define'];
   var special = {}
+  var allowedSingle = ['include', 'import', 'use'];
+  var specialSingle = {}
   var normal = clone(options);
   for (var v in options) {
     if (allowed.indexOf(v) > -1) {
       special[v] = options[v];
+      delete normal[v];
+    }
+    else if (allowedSingle.indexOf(v) > -1) {
+        specialSingle[v] = options[v];
       delete normal[v];
     }
   }
@@ -35,6 +41,11 @@ function getRenderer(str, options, locals) {
     for (var v in special[k]) {
       renderer[k](v, special[k][v]);
     }
+  }
+  
+  // special options with single parameter through their function names
+  for (var k in specialSingle) {
+    renderer[k](specialSingle[k]);
   }
 
   // normal options through set()
