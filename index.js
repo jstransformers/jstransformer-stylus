@@ -85,6 +85,14 @@ exports.renderAsync = function (str, options, locals) {
 exports.renderFileAsync = function (filename, options, locals) {
   options = options || {};
   options.filename = path.resolve(filename);
-  var str = fs.readFileSync(filename, 'utf8');
-  return exports.renderAsync(str, options, locals);
+  return new Promise(function (fulfill, reject) {
+    fs.readFile(filename, 'utf-8', function (err, str) {
+      if (err) {
+        reject(err);
+      }
+      else {
+        fulfill(exports.renderAsync(str, options, locals));
+      }
+    })
+  })
 };
