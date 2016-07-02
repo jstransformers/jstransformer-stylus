@@ -38,6 +38,21 @@ function getRenderer(str, options, locals) {
 
   // special options through their function names
   for (var k in special) {
+
+    /* Enables support of "in-view-engine" usage of "use=" option:
+    * E.g. using pug: 
+    * block styles
+    *   style
+    *     include:stylus(use='autoprefixer-stylus',compress=true) stylesheets/_common.styl
+    */
+    if (k == "use" && typeof (special[k]) == "string") {
+      // Probably, it is a require
+      var req = require(special[k]);
+      renderer[k](req, {});
+
+      continue;
+    }
+    
     for (var v in special[k]) {
       renderer[k](v, special[k][v]);
     }
