@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.0: 2016-08-23
+
+- Relax version requirement for Stylus to `0.x`
+  - Stylus [guarantees](https://github.com/stylus/stylus/blob/dev/Contributing.md#releasing-workflow)
+    that `0.x` versions will be compatible.
+
 ## v1.0.0: 2015-08-04
 
 - No changes
