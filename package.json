@@ -10,7 +10,7 @@
     "index.js"
   ],
   "dependencies": {
-    "clone": "^1.0.2",
+    "clone": "^2.0.0",
     "promise": "^7.0.3",
     "stylus": "0.x"
   },
