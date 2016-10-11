@@ -42,10 +42,19 @@ function getRenderer(str, options, locals) {
       renderer[k](v, special[k][v]);
     }
   }
-  
+
   // special options with single parameter through their function names
   for (var k in specialSingle) {
-    renderer[k](specialSingle[k]);
+    var options = []
+    if (typeof(specialSingle[k]) === 'object') {
+      options = specialSingle[k];
+    } else {
+      options = [specialSingle[k]];
+    }
+    for (var i in options) {
+      var option = options[i]
+      renderer[k](option);
+    }
   }
 
   // normal options through set()
