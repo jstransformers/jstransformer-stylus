@@ -1,7 +1,7 @@
 {
   "use": [
-    'jeet',
-    'axis',
-    'rupture'
+    "jeet",
+    "axis",
+    "rupture"
   ]
 }
