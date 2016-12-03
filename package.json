@@ -1,6 +1,6 @@
 {
   "name": "jstransformer-stylus",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Stylus support for JSTransformers.",
   "keywords": [
     "jstransformer",
@@ -15,11 +15,18 @@
     "stylus": "0.x"
   },
   "devDependencies": {
+    "axes": "0.0.0",
+    "axis": "^0.6.1",
+    "jeet": "^7.1.0",
+    "rupture": "^0.6.2",
     "test-jstransformer": "^1.0.0"
   },
   "scripts": {
     "coverage": "test-jstransformer coverage",
     "test": "test-jstransformer"
+  },
+  "engines": {
+    "node": ">=0.10.36"
   },
   "repository": {
     "type": "git",

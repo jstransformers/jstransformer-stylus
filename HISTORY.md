@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.0: 2016-12-03
+
+- Updated Boilerplate
+- Extension support through `use`
+  - By @calebeby in #16
+
 ## v1.1.0: 2016-08-23
 
 - Relax version requirement for Stylus to `0.x`
