@@ -53,6 +53,9 @@ function getRenderer(str, options, locals) {
     }
     for (var i in options) {
       var option = options[i]
+      if (typeof option === 'string')
+        option = require(option)();
+
       renderer[k](option);
     }
   }

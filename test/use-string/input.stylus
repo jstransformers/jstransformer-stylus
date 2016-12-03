@@ -1,0 +1,10 @@
+@require('jeet')
+@require('rupture')
+@require('axis')
+
+.foo
+  column(1/2)
+  background: red
+
+button
+  button()
