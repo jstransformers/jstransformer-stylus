@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.3.0: 2016-12-09
+
+- Updated Boilerplate (major change: xo)
+- Extension support through `use`
+  - Passing in string (supported in 1.2.0)
+  - Passing in function (new in 1.3.0)
+- Because of xo
+  - Rename a lot of variables
+  - Put hasOwnProperty checks in for..in loops
+  - Fix variable scope in for loops using `let`
+
 ## v1.2.0: 2016-12-03
 
 - Updated Boilerplate
