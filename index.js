@@ -74,6 +74,7 @@ function getRenderer(str, options, locals) {
           var fn = imports[i]
           // if it's a string, require it
           if (typeof fn === 'string') {
+            // eslint-disable-next-line import/no-dynamic-require
             fn = require(fn)()
           }
           // otherwise use it as-is
