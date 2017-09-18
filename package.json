@@ -1,6 +1,6 @@
 {
   "name": "jstransformer-stylus",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Stylus support for JSTransformers.",
   "keywords": [
     "jstransformer",
@@ -11,7 +11,6 @@
   ],
   "dependencies": {
     "clone": "^2.0.0",
-    "promise": "^7.0.3",
     "stylus": "0.x"
   },
   "devDependencies": {

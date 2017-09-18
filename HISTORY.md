@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.4.0: 2017-09-18
+
+- Updated Boilerplate
+
 ## v1.3.0: 2016-12-09
 
 - Updated Boilerplate (major change: xo)
