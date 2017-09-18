@@ -15,21 +15,14 @@
 ## API
 
 ```js
-<<<<<<< HEAD
 var stylus = require('jstransformer')(require('jstransformer-stylus'))
 
 var css = "fonts = helvetica, arial, sans-serif\
 body {\
   padding: 50px;\
   font: 14px/1.4 fonts;\
-}";
+}"
 stylus.render(css).body
-=======
-var stylus = require('jstransformer')(require('jstransformer-stylus'))
-
-stylus.render('blah').body
-//=> 'blah'
->>>>>>> 5bbb454966fb6be71cd92995fcbc5321bebc7765
 ```
 
 ## License
