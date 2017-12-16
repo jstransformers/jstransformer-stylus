@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.5.0: 2017-12-16
+
+- Updated Boilerplate
+- Update to `stylus@~0.54.5`
+
 ## v1.4.0: 2017-09-18
 
 - Updated Boilerplate
