@@ -1,7 +1,5 @@
 # jstransformer-stylus
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/jstransformers/jstransformer-stylus.svg)](https://greenkeeper.io/)
-
 [Stylus](https://learnboost.github.io/stylus/) support for [JSTransformers](http://github.com/jstransformers/jstransformer-stylus).
 
 [![Build Status](https://img.shields.io/travis/jstransformers/jstransformer-stylus/master.svg)](https://travis-ci.org/jstransformers/jstransformer-stylus)
