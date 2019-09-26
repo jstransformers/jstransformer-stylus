@@ -27,12 +27,12 @@ function getRenderer(str, options, locals) {
 
   for (const option in options) {
     // If the option is a special option
-    if (allowed.indexOf(options) > -1) {
+    if (allowed.includes(options)) {
       // Add it to the special object
       special[option] = options[option]
       // Remove it from the options passed to stylus
       delete normal[option]
-    } else if (allowedSingle.indexOf(option) > -1) {
+    } else if (allowedSingle.includes(option)) {
       // If the option is a specialSingle option
       // Add it to the specialSingle object
       specialSingle[option] = options[option]
@@ -68,13 +68,15 @@ function getRenderer(str, options, locals) {
         // Make it an array
         imports = [specialSingle[method]]
       }
+
       for (const i in imports) {
         if ({}.hasOwnProperty.call(imports, i)) {
           let fn = imports[i]
           // If it's a string, require it
           if (typeof fn === 'string') {
-            fn = require(fn)() // eslint-disable-line import/no-dynamic-require
+            fn = require(fn)()
           }
+
           // Otherwise use it as-is, like stylus.include(fn)
           renderer[method](fn)
         }
@@ -95,6 +97,7 @@ function getRenderer(str, options, locals) {
       renderer.define(key, locals[key])
     }
   }
+
   return renderer
 }
 
@@ -104,6 +107,7 @@ exports.render = function (str, options, locals) {
     if (err) {
       throw err
     }
+
     // @TODO How do we know what the dependencies are?
     // @TODO This is not guarenteed to work in the callback chain.
     result = res
@@ -111,6 +115,7 @@ exports.render = function (str, options, locals) {
   if (!result) {
     throw new Error('stylus compilation could not complete synchronously.')
   }
+
   return result
 }
 
