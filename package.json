@@ -11,7 +11,7 @@
   ],
   "dependencies": {
     "clone": "^2.0.0",
-    "stylus": "~0.54.5"
+    "stylus": "~0.55.0"
   },
   "devDependencies": {
     "axis": "^1.0.0",
